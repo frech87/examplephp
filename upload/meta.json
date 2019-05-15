@@ -1,0 +1,14 @@
+{"call_list":
+[
+	{
+		"call_type": "in",
+		"number": "357687980",
+		"time": 124687988,				// time begin call
+		"call_time": 78					// in seconds time talking
+	},
+	{
+		"call_type": "out",
+		"number": "+367798897",
+		"time": 1234567898,
+		"call_time": 97	}
+]}

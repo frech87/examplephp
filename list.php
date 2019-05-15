@@ -16,6 +16,5 @@ $result = mysqli_query($connection, "SELECT * FROM `userlist`");
 			}
 			
 			?>
-			
 
 </ul>
