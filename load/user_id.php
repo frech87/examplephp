@@ -1,6 +1,9 @@
 <?php
-
-    $unzip = new Unzip();
+        include ('../DBClass.php');
+        $db = new DBClass();
+        $username = $_POST['username'];
+            print $username;
+            $unzip = new Unzip();
 
 
             $json = file_get_contents($unzip->unzipfile($_FILES['file']['tmp_name'],'1234'));
@@ -28,23 +31,18 @@
 
             for ($i=0; $i < count($json_data["call_list"]); $i++)
             {
+                print_r($json_data["call_list"][$i]);
+                $db->AddJSONtoDB($username,$json_data["call_list"][$i]["call_type"],$json_data["call_list"][$i]["number"],$json_data["call_list"][$i]["time"],
+                    $json_data["call_list"][$i]["call_time"]);
                 foreach ($json_data["call_list"][$i] as $key=>$value)
                 {
                     echo $key . "=>" . $value;
                     echo "<br>";
+
                 }
                 //echo "call_type {$i}:" . $json_data["call_list"][$i]["call_type"];
                 //echo "<br>";
             }
-
-
-
-
-
-
-
-
-
 
 ?>
 <?php
