@@ -94,6 +94,8 @@ class DBClass
 
     }
 
+
+    //add new user
     public function AddUser($username)
     {
         //insert if not exist
@@ -119,6 +121,7 @@ class DBClass
         }
     }
 
+    //Message if user is exist
     function alert($msg) {
         echo "<script type='text/javascript'>alert('$msg');</script>";
     }
