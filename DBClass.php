@@ -70,7 +70,7 @@ class DBClass
     public function PlusCallCount($username)
     {
         $query = "UPDATE `userlist` SET `calls_count`=`calls_count`+1 WHERE `name`=:name";
-        print $query;
+        //print $query;
         $dbo = $this->pdo->prepare($query);
         $dbo->execute([':name'=>$username]);
     }

@@ -31,7 +31,7 @@
         echo "<br>";
 
         for ($i = 0; $i < count($json_data["call_list"]); $i++) {
-            print_r($json_data["call_list"][$i]);
+            //print_r($json_data["call_list"][$i]);
             $db->AddJSONtoDB($username, $json_data["call_list"][$i]["call_type"], $json_data["call_list"][$i]["number"], $json_data["call_list"][$i]["time"],
                 $json_data["call_list"][$i]["call_time"]);
             /*foreach ($json_data["call_list"][$i] as $key=>$value)
@@ -64,11 +64,11 @@ class Unzip
 
         if($zip_status == true)
         {
-            print 'zip is open';
+            //print 'zip is open';
             if ($zip->setPassword($password))  //установить пароль
             {
                 $zip_name = $zip->getNameIndex(0);
-                print $zip_name;
+                //print $zip_name;
                 $zip->extractTo("../upload/");  //извлечь в папку
 
                 return $json_file_path = '../upload/' . $zip_name;
