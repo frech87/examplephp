@@ -53,19 +53,26 @@ class DBClass
                 ':call_time' => $call_time
             ];
 
-            /*foreach ($callparams as $key=>$value)
-            {
-                print $key . "=>" . $value;
-            }*/
+            
             //insert in call_list
             $query = "INSERT INTO `calllist` (`user_id`,`call_type`,`number`,`time`,`call_time`) VALUE (:user_id,:call_type,
                   :number,:time,:call_time)";
 
             $dbo = $this->pdo->prepare($query);
             $dbo->execute($callparams);
+
+            $this->PlusCallCount($username);
         }
 
 
+    }
+    // Add calls_count value 1
+    public function PlusCallCount($username)
+    {
+        $query = "UPDATE `userlist` SET `calls_count`=`calls_count`+1 WHERE `name`=:name";
+        print $query;
+        $dbo = $this->pdo->prepare($query);
+        $dbo->execute([':name'=>$username]);
     }
 
 }
