@@ -53,7 +53,7 @@ class DBClass
                 ':call_time' => $call_time
             ];
 
-            
+
             //insert in call_list
             $query = "INSERT INTO `calllist` (`user_id`,`call_type`,`number`,`time`,`call_time`) VALUE (:user_id,:call_type,
                   :number,:time,:call_time)";
@@ -73,6 +73,54 @@ class DBClass
         print $query;
         $dbo = $this->pdo->prepare($query);
         $dbo->execute([':name'=>$username]);
+    }
+
+    //select user from userlist
+    public function SelectUserList()
+    {
+        $query = "SELECT * FROM `userlist`";
+        $dbo = $this->pdo->prepare($query);
+        $dbo->execute();
+        $user_list = $dbo->fetchAll();
+        //print_r($user_list);
+        print "<table>\n";
+        print "<tr><td>id</td><td>name</td><td>calls_count</td></tr>";
+        for($i=0;$i<count($user_list);$i++)
+        {
+
+            print "<tr><td>".$user_list[$i]['id']."</td><td>".$user_list[$i]['name']."</td><td>".$user_list[$i]['calls_count']."</td></tr>";
+        }
+        print  "</table>";
+
+    }
+
+    public function AddUser($username)
+    {
+        //insert if not exist
+        /*$query = "INSERT INTO `userlist` (`name`) SELECT :name FROM `userlist` WHERE NOT EXISTS (SELECT * FROM `userlist`
+                                                          WHERE `name`=:name) LIMIT 1";*/
+
+        $query = "SELECT `id` FROM `userlist` WHERE `name`=:name";
+
+
+        $dbo = $this->pdo->prepare($query);
+        $dbo->execute([':name'=>$username]);
+
+        $user_id = $dbo->fetch();
+        if($user_id)
+        {
+            $this->alert("Пользователь" . $username . " не существует");
+        }
+        else
+        {
+            $insertdata = "INSERT INTO `userlist` (`name`) VALUE (:name)";
+            $dbo=$this->pdo->prepare($insertdata);
+            $dbo->execute([':name'=>$username]);
+        }
+    }
+
+    function alert($msg) {
+        echo "<script type='text/javascript'>alert('$msg');</script>";
     }
 
 }

@@ -19,6 +19,3 @@
 //$db = new WorkDB();
 //$db->AddJSONtoDB('Alex','out','+994557860043','123456','123456');
 
-include ('DBClass.php');
-$dbClass = new DBClass();
-$dbClass->AddJSONtoDB('Ali','out','+994557860043','123456','123456');

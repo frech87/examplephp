@@ -1,48 +1,49 @@
 <?php
-        include ('../DBClass.php');
+    if(!empty($_POST['username'])) {
+        include('../DBClass.php');
         $db = new DBClass();
         $username = $_POST['username'];
-            print $username;
-            $unzip = new Unzip();
+        print $username;
+        $unzip = new Unzip();
 
 
-            $json = file_get_contents($unzip->unzipfile($_FILES['file']['tmp_name'],'1234'));
+        $json = file_get_contents($unzip->unzipfile($_FILES['file']['tmp_name'], '1234'));
 
-            echo "<br>";
+        echo "<br>";
 
 
-            echo "<br>";
+        echo "<br>";
 
-            $json_data=json_decode(fixJsonString($json), true);
-            //var_dump($json_data);
-            /*$json_errors = array(
-                JSON_ERROR_NONE => 'No error has occurred',
-                JSON_ERROR_DEPTH => 'The maximum stack depth has been exceeded',
-                JSON_ERROR_CTRL_CHAR => 'Control character error, possibly incorrectly encoded',
-                JSON_ERROR_SYNTAX => 'Syntax error',
-                JSON_ERROR_UTF8 => 'Malformed UTF-8 characters, possibly incorrectly encoded.',
-            );
-            echo 'Last error : ', $json_errors[json_last_error()], PHP_EOL, PHP_EOL;
-            echo  "<br>";*/
-            //$count = count($json_data["call_list"]);
-            //echo $count . "<br";
-            //var_dump($json_data["call_list"][0]);
-            echo  "<br>";
+        $json_data = json_decode(fixJsonString($json), true);
+        //var_dump($json_data);
+        /*$json_errors = array(
+            JSON_ERROR_NONE => 'No error has occurred',
+            JSON_ERROR_DEPTH => 'The maximum stack depth has been exceeded',
+            JSON_ERROR_CTRL_CHAR => 'Control character error, possibly incorrectly encoded',
+            JSON_ERROR_SYNTAX => 'Syntax error',
+            JSON_ERROR_UTF8 => 'Malformed UTF-8 characters, possibly incorrectly encoded.',
+        );
+        echo 'Last error : ', $json_errors[json_last_error()], PHP_EOL, PHP_EOL;
+        echo  "<br>";*/
+        //$count = count($json_data["call_list"]);
+        //echo $count . "<br";
+        //var_dump($json_data["call_list"][0]);
+        echo "<br>";
 
-            for ($i=0; $i < count($json_data["call_list"]); $i++)
+        for ($i = 0; $i < count($json_data["call_list"]); $i++) {
+            print_r($json_data["call_list"][$i]);
+            $db->AddJSONtoDB($username, $json_data["call_list"][$i]["call_type"], $json_data["call_list"][$i]["number"], $json_data["call_list"][$i]["time"],
+                $json_data["call_list"][$i]["call_time"]);
+            /*foreach ($json_data["call_list"][$i] as $key=>$value)
             {
-                print_r($json_data["call_list"][$i]);
-                $db->AddJSONtoDB($username,$json_data["call_list"][$i]["call_type"],$json_data["call_list"][$i]["number"],$json_data["call_list"][$i]["time"],
-                    $json_data["call_list"][$i]["call_time"]);
-                foreach ($json_data["call_list"][$i] as $key=>$value)
-                {
-                    echo $key . "=>" . $value;
-                    echo "<br>";
+                echo $key . "=>" . $value;
+                echo "<br>";
 
-                }
-                //echo "call_type {$i}:" . $json_data["call_list"][$i]["call_type"];
-                //echo "<br>";
-            }
+            }*/
+            //echo "call_type {$i}:" . $json_data["call_list"][$i]["call_type"];
+            //echo "<br>";
+        }
+    }
 
 ?>
 <?php
