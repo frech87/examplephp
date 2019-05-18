@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+    <list default="true" id="1de94e92-6608-408f-8685-8d27a9d28aca" name="Default" comment="commit" />
     <list id="8e3b9ef8-a454-4426-bb14-0306773c826c" name="commit" comment="" />
-    <list default="true" id="1de94e92-6608-408f-8685-8d27a9d28aca" name="Default" comment="commit">
-      <change beforePath="$PROJECT_DIR$/load/user_id.php" beforeDir="false" afterPath="$PROJECT_DIR$/load/user_id.php" afterDir="false" />
-    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +55,8 @@
       <file leaf-file-name="user_id.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/load/user_id.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+            <state relative-caret-position="306">
+              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -66,8 +64,8 @@
       <file leaf-file-name="DBClass.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DBClass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1115">
-              <caret line="120" column="9" lean-forward="true" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
+            <state relative-caret-position="578">
+              <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
               <folding>
                 <element signature="n#SelectUserList#0;n#DBClass#0;n#!!top" />
               </folding>
@@ -182,16 +180,15 @@
       <workItem from="1557860336613" duration="4392000" />
       <workItem from="1557899517188" duration="14563000" />
       <workItem from="1558093943773" duration="6883000" />
-      <workItem from="1558155361417" duration="19447000" />
+      <workItem from="1558155361417" duration="19759000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47258000" />
+    <option name="totallyTimeSpent" value="47570000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24659607" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -460,8 +457,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DBClass.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1115">
-          <caret line="120" column="9" lean-forward="true" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
+        <state relative-caret-position="578">
+          <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
           <folding>
             <element signature="n#SelectUserList#0;n#DBClass#0;n#!!top" />
           </folding>
@@ -470,8 +467,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/load/user_id.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+        <state relative-caret-position="306">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
         </state>
       </provider>
     </entry>
