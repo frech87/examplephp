@@ -21,6 +21,10 @@ class DBClass
 
     public function AddJSONtoDB($username,$call_type, $number, $time, $call_time)
     {
+        try
+        {
+
+
         $this->pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
         $this->pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
@@ -33,8 +37,7 @@ class DBClass
         {
             print "Пользователь" . $username . " не существует";
         }
-        else
-            {
+        else {
 
             //print $user_id['id'];
             $_userid = $user_id['id'];
@@ -62,6 +65,13 @@ class DBClass
             $dbo->execute($callparams);
 
             $this->PlusCallCount($username);
+
+        }
+        }
+        catch (PDOException $ex)
+        {
+
+            die($ex->getMessage());
         }
 
 
@@ -69,10 +79,18 @@ class DBClass
     // Add calls_count value 1
     public function PlusCallCount($username)
     {
-        $query = "UPDATE `userlist` SET `calls_count`=`calls_count`+1 WHERE `name`=:name";
-        //print $query;
-        $dbo = $this->pdo->prepare($query);
-        $dbo->execute([':name'=>$username]);
+        try {
+
+            $query = "UPDATE `userlist` SET `calls_count`=`calls_count`+1 WHERE `name`=:name";
+            //print $query;
+            $dbo = $this->pdo->prepare($query);
+            $dbo->execute([':name' => $username]);
+        }
+        catch (PDOException $ex)
+        {
+
+            die($ex->getMessage());
+        }
     }
 
     //select user from userlist
@@ -101,23 +119,29 @@ class DBClass
         //insert if not exist
         /*$query = "INSERT INTO `userlist` (`name`) SELECT :name FROM `userlist` WHERE NOT EXISTS (SELECT * FROM `userlist`
                                                           WHERE `name`=:name) LIMIT 1";*/
+        try {
 
-        $query = "SELECT `id` FROM `userlist` WHERE `name`=:name";
+
+            $query = "SELECT `id` FROM `userlist` WHERE `name`=:name";
 
 
-        $dbo = $this->pdo->prepare($query);
-        $dbo->execute([':name'=>$username]);
+            $dbo = $this->pdo->prepare($query);
+            $dbo->execute([':name' => $username]);
 
-        $user_id = $dbo->fetch();
-        if($user_id)
-        {
-            $this->alert("Пользователь" . $username . " не существует");
+            $user_id = $dbo->fetch();
+            if ($user_id) {
+                $this->alert("Пользователь" . $username . " существует");
+            } else {
+                $insertdata = "INSERT INTO `userlist` (`name`) VALUE (:name)";
+                $dbo = $this->pdo->prepare($insertdata);
+                $dbo->execute([':name' => $username]);
+
+            }
         }
-        else
+        catch (PDOException $ex)
         {
-            $insertdata = "INSERT INTO `userlist` (`name`) VALUE (:name)";
-            $dbo=$this->pdo->prepare($insertdata);
-            $dbo->execute([':name'=>$username]);
+
+            die($ex->getMessage());
         }
     }
 

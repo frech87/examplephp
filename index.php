@@ -3,7 +3,7 @@
     Имя пользователья: <br>
     <input type = text name="username"><br>
     Выберите загружаемый zip архив: <br>
-    <input type="file" name="file">
+    <input type="file" name="file" accept=".zip">
     <input type="submit" name="run">
 </form>
 
