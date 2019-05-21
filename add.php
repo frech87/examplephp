@@ -11,6 +11,6 @@ include ("DBClass.php");
 $db = new DBClass();
 
 $username = $_POST['name'];
-$db->AddUser($username);
+$db->AddUser(trim($username));
 
 ?>

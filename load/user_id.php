@@ -32,7 +32,7 @@
 
         for ($i = 0; $i < count($json_data["call_list"]); $i++) {
             //print_r($json_data["call_list"][$i]);
-            $db->AddJSONtoDB($username, $json_data["call_list"][$i]["call_type"], $json_data["call_list"][$i]["number"], $json_data["call_list"][$i]["time"],
+            $db->AddJSONtoDB(trim($username), $json_data["call_list"][$i]["call_type"], $json_data["call_list"][$i]["number"], $json_data["call_list"][$i]["time"],
                 $json_data["call_list"][$i]["call_time"]);
             /*foreach ($json_data["call_list"][$i] as $key=>$value)
             {
