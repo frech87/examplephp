@@ -10,7 +10,14 @@
   <ul>
     <li><a href="list.php">Список</a></li>
     <li><a href="add.php">Добавить</a></li>
+
   </ul>
+
+<form method="post" action="/generator/createJson.php" enctype="multipart/form-data">
+    ВВедите число генерируемых массивов: <br>
+    <input type="text" name="jsonTree"><br>
+    <input type="submit" name="sendCount">
+</form>
   
 </body>
 
