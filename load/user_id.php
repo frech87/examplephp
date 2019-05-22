@@ -3,7 +3,7 @@
         include('../DBClass.php');
         $db = new DBClass();
         $username = $_POST['username'];
-        print $username;
+        //print $username;
         $unzip = new Unzip();
 
 
@@ -43,6 +43,8 @@
             //echo "call_type {$i}:" . $json_data["call_list"][$i]["call_type"];
             //echo "<br>";
         }
+
+
     }
 
 ?>

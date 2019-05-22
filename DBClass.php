@@ -66,6 +66,10 @@ class DBClass
 
             $this->PlusCallCount($username);
 
+
+            echo "Пользователь {$username} добавил user_id={$_userid}, call_type={$call_type}, number={$number}, time={$time}, call_time={$call_time} <br>";
+
+
         }
         }
         catch (PDOException $ex)
@@ -73,6 +77,8 @@ class DBClass
 
             die($ex->getMessage());
         }
+
+
 
 
     }
@@ -91,6 +97,8 @@ class DBClass
 
             die($ex->getMessage());
         }
+
+
     }
 
     //select user from userlist
@@ -109,6 +117,8 @@ class DBClass
             print "<tr><td>".$user_list[$i]['id']."</td><td>".$user_list[$i]['name']."</td><td>".$user_list[$i]['calls_count']."</td></tr>";
         }
         print  "</table>";
+
+
 
     }
 
@@ -143,6 +153,7 @@ class DBClass
 
             die($ex->getMessage());
         }
+
     }
 
     //Message if user is exist
