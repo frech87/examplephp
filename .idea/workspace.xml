@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list id="8e3b9ef8-a454-4426-bb14-0306773c826c" name="commit" comment="" />
     <list default="true" id="1de94e92-6608-408f-8685-8d27a9d28aca" name="Default" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/createJson.php" beforeDir="false" afterPath="$PROJECT_DIR$/generator/createJson.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,8 +65,8 @@
       <file leaf-file-name="createJson.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generator/createJson.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            <state relative-caret-position="34">
+              <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -187,12 +186,12 @@
       <workItem from="1558155361417" duration="19759000" />
       <workItem from="1558416135031" duration="3201000" />
       <workItem from="1558536755665" duration="1995000" />
-      <workItem from="1558553270608" duration="3044000" />
+      <workItem from="1558553270608" duration="3455000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55810000" />
+    <option name="totallyTimeSpent" value="56221000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -595,8 +594,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generator/createJson.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        <state relative-caret-position="34">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
         </state>
       </provider>
     </entry>

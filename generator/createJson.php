@@ -5,6 +5,7 @@
  * Date: 22.05.2019
  * Time: 23:29
  */
+//создать json файл с рандомными значениями в zip архиве
 
 namespace Json_Zip;
 
@@ -21,7 +22,7 @@ class createJson
 
     function __construct($_jsonTree = 1)
     {
-             
+
             $this->jsonTree=$_jsonTree;
 
     }
