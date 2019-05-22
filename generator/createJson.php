@@ -20,6 +20,8 @@ class createJson
 
     private $jsonTree;
 
+    private $_calllist = array();
+
     function __construct($_jsonTree = 1)
     {
 
@@ -29,8 +31,10 @@ class createJson
 
     function createArray()
     {
+
+        // создает массив и кодирует в json
         $call_list = array();
-        $_calllist = array();
+
         for ($i=0;$i<$this->jsonTree;$i++)
         {
             $this->call_type = $this->array_call_type[array_rand($this->array_call_type)];
@@ -46,10 +50,14 @@ class createJson
             $call_list[]=$arrayJson;
         }
 
-        $_calllist["call_list"] = $call_list;
+        $this->_calllist["call_list"] = $call_list;
         //print_r($call_list);
+        //return
+        print json_encode($this->_calllist);
 
-        print json_encode($_calllist);
+        // save json file
+
+        //zip json file
 
     }
 
