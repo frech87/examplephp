@@ -30,6 +30,7 @@ class createJson
     function createArray()
     {
         $call_list = array();
+        $_calllist = array();
         for ($i=0;$i<$this->jsonTree;$i++)
         {
             $this->call_type = $this->array_call_type[array_rand($this->array_call_type)];
@@ -45,10 +46,10 @@ class createJson
             $call_list[]=$arrayJson;
         }
 
-
+        $_calllist["call_list"] = $call_list;
         //print_r($call_list);
 
-        print json_encode($call_list);
+        print json_encode($_calllist);
 
     }
 
