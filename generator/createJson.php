@@ -46,7 +46,9 @@ class createJson
         }
 
 
-        print_r($call_list);
+        //print_r($call_list);
+
+        print json_encode($call_list);
 
     }
 
