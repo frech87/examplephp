@@ -53,15 +53,29 @@ class createJson
         $this->_calllist["call_list"] = $call_list;
         //print_r($call_list);
         //return
-        print json_encode($this->_calllist);
+        return json_encode($this->_calllist);
 
-        // save json file
 
-        //zip json file
+
+    }
+
+    //архивировать файл
+    function createZip($file,$password)
+    {
+        //$config = require_once '../config.php';
+        //$password = $config['username'];
+        $zip = new \ZipArchive();
+        $zipfilename = $file.".zip";
+        if($zip->open($zipfilename,\ZipArchive::CREATE)===true)
+        {
+            $zip->addFile($file.'.json','meta.json');
+
+            $zip->setEncryptionName('meta.json',\ZipArchive::EM_AES_256,$password);
+            $zip->close();
+        }
+
+
 
     }
 
 }
-$jsonTree = $_POST['jsonTree'];
-$_createJson = new createJson($jsonTree);
-$_createJson->createArray();

@@ -13,7 +13,7 @@
 
   </ul>
 
-<form method="post" action="/generator/createJson.php" enctype="multipart/form-data">
+<form method="post" action="/generator/Json.php" enctype="multipart/form-data">
     ВВедите число генерируемых массивов: <br>
     <input type="text" name="jsonTree"><br>
     <input type="submit" name="sendCount">

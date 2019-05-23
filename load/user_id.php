@@ -1,5 +1,5 @@
 <?php
-    if(!empty($_POST['username'])) {
+    if(!empty($_POST['username']) && !empty($_FILES['file']['tmp_name'])) {
         include('../DBClass.php');
         $db = new DBClass();
         $username = $_POST['username'];
@@ -46,8 +46,21 @@
 
 
     }
+    else
+    {
+        alert("Правильно заполните поля");
+    }
 
+
+function alert($msg) {
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
 ?>
+    <body>
+    <ul>
+        <li><a href = "../index.php" >Назад</li>
+    </ul>
+    </body>
 <?php
 function fixJsonString($str) {
 

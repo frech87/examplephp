@@ -14,3 +14,10 @@ $username = $_POST['name'];
 $db->AddUser(trim($username));
 
 ?>
+
+<body>
+<ul>
+    <li><a href = "../index.php" >Назад</li>
+</ul>
+</body>
+

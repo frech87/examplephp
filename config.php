@@ -6,5 +6,7 @@ return [
     'dbname' => 'ats_db',
     'username' => 'root',
     'password' => '',
-    'charset' => 'utf8'
+    'charset' => 'utf8',
+    'zippassword' => '1234',
+    'savefilepath' => 'C:/Users/dell/Desktop/jsonpath'
 ];

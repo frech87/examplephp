@@ -131,21 +131,26 @@ class DBClass
                                                           WHERE `name`=:name) LIMIT 1";*/
         try {
 
+            if(!empty($username)) {
+                $query = "SELECT `id` FROM `userlist` WHERE `name`=:name";
 
-            $query = "SELECT `id` FROM `userlist` WHERE `name`=:name";
 
-
-            $dbo = $this->pdo->prepare($query);
-            $dbo->execute([':name' => $username]);
-
-            $user_id = $dbo->fetch();
-            if ($user_id) {
-                $this->alert("Пользователь" . $username . " существует");
-            } else {
-                $insertdata = "INSERT INTO `userlist` (`name`) VALUE (:name)";
-                $dbo = $this->pdo->prepare($insertdata);
+                $dbo = $this->pdo->prepare($query);
                 $dbo->execute([':name' => $username]);
 
+                $user_id = $dbo->fetch();
+                if ($user_id) {
+                    $this->alert("Пользователь" . $username . " существует");
+                } else {
+                    $insertdata = "INSERT INTO `userlist` (`name`) VALUE (:name)";
+                    $dbo = $this->pdo->prepare($insertdata);
+                    $dbo->execute([':name' => $username]);
+
+                }
+            }
+            else
+            {
+                $this->alert("Пустое поле имени пользователья");
             }
         }
         catch (PDOException $ex)

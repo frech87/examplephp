@@ -1,14 +1,1 @@
-{"call_list":
-[
-	{
-		"call_type": "in",
-		"number": "357687980",
-		"time": 124687988,				// time begin call
-		"call_time": 78					// in seconds time talking
-	},
-	{
-		"call_type": "out",
-		"number": "+367798897",
-		"time": 1234567898,
-		"call_time": 97	}
-]}
+{"call_list":[{"call_type":"out","number":"+318875470","time":123731340,"call_time":46},{"call_type":"out","number":"+305703175","time":183913632,"call_time":74},{"call_type":"in","number":"+330113882","time":175772789,"call_time":66},{"call_type":"out","number":"+334452108","time":113851474,"call_time":82}]}
